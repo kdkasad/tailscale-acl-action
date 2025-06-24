@@ -25,7 +25,7 @@ inputs:
 
 runs:
   using: docker
-  image: docker://ghcr.io/kdkasad/tailscale-acl-action:0.1.0
+  image: docker://ghcr.io/kdkasad/tailscale-acl-action:0.1.1
   args:
     - --policy-file=${{ inputs.policy-file }}
     - ${{ inputs.action }}
