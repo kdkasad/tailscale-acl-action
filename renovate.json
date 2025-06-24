@@ -8,9 +8,9 @@
             "customType": "regex",
             "managerFilePatterns": ["/(^|/)Dockerfile$/"],
             "matchStrings": [
-                "go install (?<depName>[^@]+)@v(?<currentValue>\\S+)$"
+                "go install (?<depName>[^@]+)@(?<currentValue>v\\S+)"
             ],
-            "datasourceTemplate": "golang"
+            "datasourceTemplate": "go"
         }
     ]
 }
