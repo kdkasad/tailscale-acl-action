@@ -29,3 +29,8 @@ runs:
   args:
     - --policy-file=${{ inputs.policy-file }}
     - ${{ inputs.action }}
+  env:
+    TS_OAUTH_ID: "${{ inputs.oauth-client-id }}"
+    TS_OAUTH_SECRET: "${{ inputs.oauth-secret }}"
+    TS_API_KEY: "${{ inputs.api-key }}"
+    TS_TAILNET: "${{ inputs.tailnet }}"

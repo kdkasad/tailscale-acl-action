@@ -7,6 +7,4 @@ RUN --mount=type=cache,target=/root/go/pkg/mod \
 
 FROM alpine:3.22
 COPY --from=builder /root/go/bin/gitops-pusher /usr/local/bin/gitops-pusher
-VOLUME /github/workspace
-WORKDIR /github/workspace
 ENTRYPOINT ["gitops-pusher"]
