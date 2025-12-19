@@ -1,8 +1,14 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-    "extends": [
-        "config:recommended"
-    ],
+
+    "extends": ["config:recommended"],
+
+    "assignees": ["kdkasad"],
+    "reviewers": ["kdkasad"],
+
+    "automergeType": "branch",
+    "pruneBranchAfterAutomerge": true,
+
     "customManagers": [
         {
             "customType": "regex",
@@ -11,6 +17,14 @@
                 "go install (?<depName>[^@]+)@(?<currentValue>v\\S+)"
             ],
             "datasourceTemplate": "go"
+        }
+    ],
+
+    "packageRules": [
+        {
+            "description": "Auto-merge Go package updates",
+            "matchManagers": ["custom.regex"],
+            "automerge": true
         }
     ]
 }
